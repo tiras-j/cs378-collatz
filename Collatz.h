@@ -28,6 +28,16 @@ using namespace std;
  */
 pair<int, int> collatz_read (const string& s);
 
+// ----------
+// calc_cycle
+// ----------
+ /**
+  * Calculate the cycle length of a given integer
+  * @param n a positive integer
+  * @return an integer cycle length value
+  */ 
+int calc_cycle (int n);
+
 // ------------
 // collatz_eval
 // ------------
