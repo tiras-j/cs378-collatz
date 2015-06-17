@@ -14,7 +14,13 @@
 #include <string>   // getline, string
 #include <utility>  // make_pair, pair
 
-#include "Collatz.h"
+// -------
+// defines
+// -------
+
+#ifdef ONLINE_JUDGE
+    #define NDEBUG
+#endif
 
 using namespace std;
 
@@ -51,8 +57,8 @@ int calc_cycle (int n) {
 // ------------
 
 int collatz_eval (int i, int j) {
-    int max = 0;    
-
+    int max = 0;
+    
     if(i > j){i^=j;j^=i;i^=j;}
     while(i <= j){
         int val = calc_cycle(i);
@@ -82,3 +88,13 @@ void collatz_solve (istream& r, ostream& w) {
         const int            j = p.second;
         const int            v = collatz_eval(i, j);
         collatz_print(w, i, j, v);}}
+
+// ----
+// main
+// ----
+
+int main () {
+    using namespace std;
+    collatz_solve(cin, cout);
+    return 0;}
+
