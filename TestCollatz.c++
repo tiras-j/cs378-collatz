@@ -29,11 +29,23 @@ using namespace std;
 // read
 // ----
 
-TEST(CollatzFixture, read) {
+TEST(CollatzFixture, read_1) {
     string s("1 10\n");
     const pair<int, int> p = collatz_read(s);
     ASSERT_EQ( 1, p.first);
     ASSERT_EQ(10, p.second);}
+
+TEST(CollatzFixture, read_2) {
+    string s("0 0\n");
+    const pair<int, int> p = collatz_read(s);
+    ASSERT_EQ(0, p.first);
+    ASSERT_EQ(0, p.second);}
+
+TEST(CollatzFixture, read_3) {
+    string s("-1 -2\n");
+    const pair<int, int> p = collatz_read(s);
+    ASSERT_EQ(-1, p.first);
+    ASSERT_EQ(-2, p.second);}
 
 // ----
 // eval
@@ -55,14 +67,53 @@ TEST(CollatzFixture, eval_4) {
     const int v = collatz_eval(900, 1000);
     ASSERT_EQ(174, v);}
 
+TEST(CollatzFixture, eval_5) {
+    const int v = collatz_eval(1,1);
+    ASSERT_EQ(1, v);}
+
+TEST(CollatzFixture, eval_6) {
+    const int v = collatz_eval(1000, 900);
+    ASSERT_EQ(174, v);}
+
+TEST(CollatzFixture, eval_7) {
+    const int v = collatz_eval(5,5);
+    ASSERT_EQ(6, v);}
+
 // -----
 // print
 // -----
 
-TEST(CollatzFixture, print) {
+TEST(CollatzFixture, print_1) {
     ostringstream w;
     collatz_print(w, 1, 10, 20);
     ASSERT_EQ("1 10 20\n", w.str());}
+
+TEST(CollatzFixture, print_2) {
+    ostringstream w;
+    collatz_print(w, 1, 1, 1);
+    ASSERT_EQ("1 1 1\n", w.str());}
+
+// ----------
+// calc_cycle
+// ----------
+
+TEST(CollatzFixture, calc_cycle_1) {
+    int v = calc_cycle(5);
+    ASSERT_EQ(6, v);}
+
+TEST(CollatzFixture, calc_cycle_2) {
+    int v = calc_cycle(10);
+    ASSERT_EQ(7, v);}
+
+TEST(CollatzFixture, calc_cycle_3) {
+    int max = 0;
+    for(int i = 1; i <= 10; ++i){
+        int v = calc_cycle(i);
+        if(v > max) max = v;
+    }
+
+    ASSERT_EQ(20, max);
+}
 
 // -----
 // solve

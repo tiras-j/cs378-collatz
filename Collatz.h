@@ -14,7 +14,7 @@
 #include <iostream> // istream, ostream
 #include <string>   // string
 #include <utility>  // pair
-
+#include <vector>   // vector
 using namespace std;
 
 // ------------
@@ -27,6 +27,16 @@ using namespace std;
  * @return a pair of ints, representing the beginning and end of a range, [i, j]
  */
 pair<int, int> collatz_read (const string& s);
+
+// -------------
+// process_queue
+// -------------
+ /**
+  * Process intermediate calculation values, values are stored in global queue
+  * to avoid the cost of construction/destruction between stack frames
+  * @param cycles a positive integer of cycle length
+  */
+void process_queue(int cycles);
 
 // ----------
 // calc_cycle
