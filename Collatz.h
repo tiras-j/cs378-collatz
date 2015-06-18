@@ -8,6 +8,13 @@
 #define Collatz_h
 
 #define USE_CACHE
+
+// Relocating this symbol simply for gtest to 
+// be able to acces via its include. Technically this
+// does not (and SHOULD NOT) be exposed in a header file
+#ifdef USE_CACHE
+    #define CACHE_SIZE 100000
+#endif
 // --------
 // includes
 // --------

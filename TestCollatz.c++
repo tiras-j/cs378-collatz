@@ -20,11 +20,11 @@
 #include "Collatz.h"
 
 using namespace std;
-
 // -----------
 // TestCollatz
 // -----------
-
+extern int cache[];
+extern vector<int> queue;
 // ----
 // read
 // ----
@@ -115,6 +115,39 @@ TEST(CollatzFixture, calc_cycle_3) {
     ASSERT_EQ(20, max);
 }
 
+#ifdef USE_CACHE
+// -------------
+// process_queue
+// -------------
+
+TEST(CollatzFixture, process_queue_1) {
+    queue.push_back(10);
+    queue.push_back(5);
+    
+    process_queue(7);
+    ASSERT_EQ(7, cache[10]);
+    ASSERT_EQ(6, cache[5]);
+}
+
+TEST(CollatzFixture, process_queue_2) {
+    queue.push_back(100);
+    queue.push_back(200);
+    queue.push_back(300);
+
+    process_queue(8);
+    
+    ASSERT_EQ(8, cache[100]);
+}
+
+TEST(CollatzFixture, process_queue_3) {
+    queue.push_back(CACHE_SIZE + 1);
+    queue.push_back(CACHE_SIZE - 1);
+    process_queue(9);
+    
+    ASSERT_EQ(8, cache[CACHE_SIZE - 1]);
+}
+
+#endif
 // -----
 // solve
 // -----

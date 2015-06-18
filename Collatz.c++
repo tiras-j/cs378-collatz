@@ -47,6 +47,7 @@ pair<int, int> collatz_read (const string& s) {
 // process_queue
 // -------------
 void process_queue(int cycles) {
+    assert(cycles >= (int)queue.size());
     for(int i : queue){
         if(i < CACHE_SIZE) 
             cache[i] = cycles;
