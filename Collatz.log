@@ -1,0 +1,83 @@
+commit 84ed754f613ad43ac1fc846e94c14c0704e4b747
+Author: tiras-j <joshua.tiras@utexas.edu>
+Date:   Wed Jun 17 20:08:57 2015 -0500
+
+    Created html dir and updated makefile with EID substitution
+
+commit 49a6310ed0a8b0c8f026961520789864082b29af
+Author: tiras-j <joshua.tiras@utexas.edu>
+Date:   Wed Jun 17 20:02:18 2015 -0500
+
+    Cleaned up code and verified SphereCollatz.c++ run successfully. Closes #19, Closes #20
+
+commit b7c46700a8855c60213fad81ae19d8ff10b39cb7
+Author: tiras-j <joshua.tiras@utexas.edu>
+Date:   Wed Jun 17 19:49:42 2015 -0500
+
+    Updated test files to handle process_queue helper function.
+
+commit 98ab136a9f74b4360ccaa56c9c11bab9da96e05c
+Author: tiras-j <joshua.tiras@utexas.edu>
+Date:   Wed Jun 17 19:26:26 2015 -0500
+
+    Added #ifdef feature gate. Closes #12
+
+commit 6df8acaf78831f095329f09f2378fea6019050bb
+Author: tiras-j <joshua.tiras@utexas.edu>
+Date:   Wed Jun 17 18:46:34 2015 -0500
+
+    Updated cache solution, added unit tests. Closes #15. Closes #10
+
+commit 95f9ba04d0a1c535e31041e71c28e8d79dd6132b
+Author: tiras-j <joshua.tiras@utexas.edu>
+Date:   Wed Jun 17 17:32:03 2015 -0500
+
+    Removed sample files from tracking
+
+commit a0f0dddade2fd756d7878e22520f285db6d76bfb
+Author: tiras-j <joshua.tiras@utexas.edu>
+Date:   Wed Jun 17 17:31:03 2015 -0500
+
+    Created 100+ lines of acceptance test and output
+
+commit 7451008442661ce722664e70fb4c73f490127be1
+Author: tiras-j <joshua.tiras@utexas.edu>
+Date:   Wed Jun 17 17:14:39 2015 -0500
+
+    Simple solution accepted by Sphere, Closes #14, Closes #7, Closes #8
+
+commit 7a9d7e3e0bf489e6e1c0ffcbf5d8641e2eb9c045
+Author: tiras-j <joshua.tiras@utexas.edu>
+Date:   Wed Jun 17 16:59:35 2015 -0500
+
+    Implemented simple solution, solved linker error. Closes #13, Closes #7.
+
+commit baf2885f4c0b10752c3bef86490c5817e348f4e6
+Author: Josh Tiras <joshua.tiras@utexas.edu>
+Date:   Tue Jun 16 13:45:59 2015 -0500
+
+    Added 'sudo: required' tag to get travis to run without error
+
+commit a97a3d19077e007dd7d788d1b9c1b63e76eff6ed
+Author: Josh Tiras <joshua.tiras@utexas.edu>
+Date:   Tue Jun 16 13:41:59 2015 -0500
+
+    Updated TestCollatz with correct expected results.
+
+commit be6ae96a5ec29662c9fbf5935430f40b1dc66acb
+Author: Josh Tiras <joshua.tiras@utexas.edu>
+Date:   Tue Jun 16 13:36:33 2015 -0500
+
+    Moved gitignore.sample -> .gitignore
+
+commit 0384e8dce3a293ffa67bcd41e1e68aac18b9d9e7
+Author: Josh Tiras <joshua.tiras@utexas.edu>
+Date:   Tue Jun 16 13:33:35 2015 -0500
+
+    Initial files commit
+
+commit 74eda0193cb55e21e9fa7c8435ea16f979725358
+Author: Josh Tiras <tiras-j@users.noreply.github.com>
+Date:   Tue Jun 16 13:04:44 2015 -0500
+
+    Initial commit
