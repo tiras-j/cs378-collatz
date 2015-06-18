@@ -43,6 +43,7 @@ pair<int, int> collatz_read (const string& s);
  /**
   * Process intermediate calculation values, values are stored in global queue
   * to avoid the cost of construction/destruction between stack frames
+  * NOTE: Only included if USE_CACHE is defined
   * @param cycles a positive integer of cycle length
   */
 void process_queue(int cycles);
