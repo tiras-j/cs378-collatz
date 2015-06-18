@@ -7,6 +7,7 @@
 #ifndef Collatz_h
 #define Collatz_h
 
+#define USE_CACHE
 // --------
 // includes
 // --------
@@ -28,6 +29,7 @@ using namespace std;
  */
 pair<int, int> collatz_read (const string& s);
 
+#ifdef USE_CACHE
 // -------------
 // process_queue
 // -------------
@@ -37,7 +39,7 @@ pair<int, int> collatz_read (const string& s);
   * @param cycles a positive integer of cycle length
   */
 void process_queue(int cycles);
-
+#endif
 // ----------
 // calc_cycle
 // ----------

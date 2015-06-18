@@ -13,20 +13,24 @@
 #include <sstream>  // istringstream
 #include <string>   // getline, string
 #include <utility>  // make_pair, pair
-#include <vector>   // vector
+#ifdef USE_CACHE
+    #include <vector>   // vector
+#endif
 #include "Collatz.h"
 
 using namespace std;
 
-#define CACHE_SIZE 100000
-#define CACHE_ACCESS(A) (((A) < CACHE_SIZE) ? cache[(A)] : 0)
-
+#ifdef USE_CACHE
+    #define CACHE_SIZE 100000
+    #define CACHE_ACCESS(A) (((A) < CACHE_SIZE) ? cache[(A)] : 0)
+#endif
 // -------
 // globals
 // -------
-int cache[CACHE_SIZE] = {};
-vector<int> queue;
-
+#ifdef USE_CACHE
+    int cache[CACHE_SIZE] = {};
+    vector<int> queue;
+#endif
 // ------------
 // collatz_read
 // ------------
@@ -38,6 +42,7 @@ pair<int, int> collatz_read (const string& s) {
     sin >> i >> j;
     return make_pair(i, j);}
 
+#ifdef USE_CACHE
 // -------------
 // process_queue
 // -------------
@@ -76,7 +81,25 @@ int calc_cycle (int n) {
     process_queue(c);
     return c;
 }
+#else
 
+// ----------
+// calc_cycle
+// ----------
+int calc_cycle (int n) {
+    assert(n > 0);
+    int c = 1;
+
+    while(n > 1) {
+        if(!(n % 2)){ n /= 2;}
+        else { n *= 3; ++n;}
+        ++c;
+    }
+
+    assert(c > 0);
+    return c;
+}
+#endif // USE_CACHE
 // ------------
 // collatz_eval
 // ------------
